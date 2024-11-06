@@ -12,8 +12,10 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private TMP_InputField playerNameInput;
     [SerializeField] private TextMeshProUGUI bestScoreText;
+    [SerializeField] private GameObject enterNameText;
     private void Start()
     {
+        enterNameText.SetActive(false);
         LoadBestScore();
     }
     public void StartGame()
@@ -27,6 +29,7 @@ public class MenuManager : MonoBehaviour
         }
         else
         {
+            enterNameText.SetActive(true);
             Debug.Log("Please enter a name.");
         }
         
